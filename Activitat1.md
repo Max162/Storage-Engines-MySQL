@@ -3,7 +3,7 @@
 SHOW STORAGE ENGINES;
 ```
 <p align="center">
- <img src="https://user-images.githubusercontent.com/61474788/161563147-a385dbb5-f6ed-41a1-9f44-6f74dcd38243.png">
+ <img src="https://user-images.githubusercontent.com/61474788/161563552-9bd8d06a-64a6-4d05-80b4-f39f6f7c23e5.png">
 </p>
 <br />
 
