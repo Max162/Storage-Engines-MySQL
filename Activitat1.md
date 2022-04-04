@@ -1,3 +1,5 @@
+#
+
 **•	Indica quins són els motors d’emmagatzematge que pots utilitzar (quins estan actius)? Mostra al comanda utilitzada i el resultat d’aquesta.**
 <br /><br />
 Per saber quins motors d'emmagatzematge estan actius utilitzarem la comanda:
@@ -17,22 +19,14 @@ Per saber quin és el motor d'emmagatzematge per defecte ens haurem de fixar en 
 <p align="center">
  <img src="https://user-images.githubusercontent.com/61474788/161565089-13b787ef-b673-4384-860a-41620b70f2ed.png">
 </p>
+
+Per fer que les noves taules que creem a la BD per defecte utilitzin el motor MyISAM afegirem la següent línia perquè a cada inici de sessió es cargui el motor MyISAM per defecte.
+També serveix executar la comanda **SET DEFAULT_STORAGE_ENGINE=MyISAM** pero quan tanquem la sessió MyISAM deixarà de ser el motor per defecte
 ```
-
-```
-<p align="center">
- <img src="">
-</p>
-<br />
-
-
-**•	Com podem saber quin és el motor d'emmagatzematge per defecte?**
-<br /><br />
-```
-
+default-storage-engine=MyISAM
 ```
 <p align="center">
- <img src="">
+ <img src="https://user-images.githubusercontent.com/61474788/161568687-2be849d8-c9e9-4ae0-9b1f-f5d4d2982bea.png">
 </p>
 <br />
 
