@@ -1,5 +1,5 @@
 **•	Indica quins són els motors d’emmagatzematge que pots utilitzar (quins estan actius)? Mostra al comanda utilitzada i el resultat d’aquesta.**
-<br />
+<br /><br />
 Per saber quins motors d'emmagatzematge estan actius utilitzarem la comanda:
 ```
 SHOW STORAGE ENGINES;
