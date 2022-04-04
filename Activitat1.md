@@ -30,8 +30,7 @@ Aquest tipus d’emmagatzematge està optimitzat per ser molt eficient en les es
 **•	Importa la BD Sakila com a taules MyISAM. Fes els canvis necessaris per importar la BD Sakila perquè totes les taules siguin de tipus MyISAM. 
 Mira quins són els fitxers físics que ha creat, quan ocupen i quines són les seves extensions.
 Mostra'n una captura de pantalla i indica què conté cada fitxer.
-Un cop fet això torna a deixar el motor InnoDB per defecte.
-**
+Un cop fet això torna a deixar el motor InnoDB per defecte.**
 ```
 
 ```
