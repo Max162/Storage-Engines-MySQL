@@ -2,6 +2,9 @@
 ```
 
 ```
+<p align="center">
+ <img src="">
+</p>
 <br />
 
 
@@ -9,6 +12,9 @@
 ```
 
 ```
+<p align="center">
+ <img src="">
+</p>
 <br />
 
 
@@ -16,6 +22,9 @@
 ```
 
 ```
+<p align="center">
+ <img src="">
+</p>
 <br />
 
 
@@ -24,6 +33,9 @@ Aquest tipus d’emmagatzematge està optimitzat per ser molt eficient en les es
 ```
 
 ```
+<p align="center">
+ <img src="">
+</p>
 <br />
 
 
@@ -34,6 +46,9 @@ Un cop fet això torna a deixar el motor InnoDB per defecte.**
 ```
 
 ```
+<p align="center">
+ <img src="">
+</p>
 <br />
 
 
@@ -42,6 +57,9 @@ Busca informació d'aquests schemas. Indica quin és l'objectiu de cadascun d'el
 ```
 
 ```
+<p align="center">
+ <img src="">
+</p>
 <br />
 
 
@@ -49,5 +67,8 @@ Busca informació d'aquests schemas. Indica quin és l'objectiu de cadascun d'el
 ```
 
 ```
+<p align="center">
+ <img src="">
+</p>
 <br />
 
