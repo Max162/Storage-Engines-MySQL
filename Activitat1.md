@@ -21,10 +21,11 @@ Per saber quin és el motor d'emmagatzematge per defecte ens haurem de fixar en 
 </p>
 
 Per fer que les noves taules que creem a la BD per defecte utilitzin el motor MyISAM afegirem la següent línia perquè a cada inici de sessió es cargui el motor MyISAM per defecte.
-També serveix executar la comanda **SET DEFAULT_STORAGE_ENGINE=MyISAM** pero quan tanquem la sessió MyISAM deixarà de ser el motor per defecte
 ```
 default-storage-engine=MyISAM
 ```
+També serveix executar la comanda **SET DEFAULT_STORAGE_ENGINE=MyISAM** pero quan tanquem la sessió MyISAM deixarà de ser el motor per defecte.
+
 <p align="center">
  <img src="https://user-images.githubusercontent.com/61474788/161568687-2be849d8-c9e9-4ae0-9b1f-f5d4d2982bea.png">
 </p>
