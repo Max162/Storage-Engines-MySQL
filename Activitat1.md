@@ -1,9 +1,9 @@
 **•	Indica quins són els motors d’emmagatzematge que pots utilitzar (quins estan actius)? Mostra al comanda utilitzada i el resultat d’aquesta.**
 ```
-
+SHOW STORAGE ENGINES;
 ```
 <p align="center">
- <img src="">
+ <img src="https://user-images.githubusercontent.com/61474788/161563147-a385dbb5-f6ed-41a1-9f44-6f74dcd38243.png">
 </p>
 <br />
 
