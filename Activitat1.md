@@ -121,21 +121,32 @@ mysql> SHOW TABLES FROM INFORMATION_SCHEMA LIKE 'INNODB_SYS%';
 ```
 
 L'objectiu de cada una d'aquestes taules és:<br/>
-**```INNODB_SYS_DATAFILES```** facilita informació de la ruta de l'arxiu de dades per espais tant de tables generals com d'arxiu per taula de InnoDB<br/>
-**```INNODB_SYS_TABLESTATS```** facilita informació del estat de baix nivell sobre les taules InnoDB que es deriva de les estructures de dades de memòria<br/>
-**```INNODB_SYS_FOREIGN```** facilita metadades sobre les claus externes en definides en les taules de InnoDB<br/>
-**```INNODB_SYS_COLUMNS```** facilita metadades sobre les columnes de la taula InnoDB<br/>
-**```INNODB_SYS_INDEXES```** facilita metadades sobre els índexs de InnoDB<br/>
-**```INNODB_SYS_FIELDS```** facilita metadades sobre les columnes clau dels índexs de InnoDB<br/>
-**```INNODB_SYS_TABLESPACES```** facilita metadades tant sobre l'arxiu per taula com d'espai de taules generals de InnoDB<br/>
-**```INNODB_SYS_FOREIGN_COLS```** facilita metadades sobre les columnes de claus externes que es definiexen en les taules InnoDB<br/>
-**```INNODB_SYS_TABLES```** facilita metadades sobre les taules InnoDB<br/>
+   - **```INNODB_SYS_DATAFILES```** facilita informació de la ruta de l'arxiu de dades per espais tant de tables generals com d'arxiu per taula de InnoDB<br/>
+   - **```INNODB_SYS_TABLESTATS```** facilita informació del estat de baix nivell sobre les taules InnoDB que es deriva de les estructures de dades de memòria<br/>
+   - **```INNODB_SYS_FOREIGN```** facilita metadades sobre les claus externes en definides en les taules de InnoDB<br/>
+   - **```INNODB_SYS_COLUMNS```** facilita metadades sobre les columnes de la taula InnoDB<br/>
+   - **```INNODB_SYS_INDEXES```** facilita metadades sobre els índexs de InnoDB<br/>
+   - **```INNODB_SYS_FIELDS```** facilita metadades sobre les columnes clau dels índexs de InnoDB<br/>
+   - **```INNODB_SYS_TABLESPACES```** facilita metadades tant sobre l'arxiu per taula com d'espai de taules generals de InnoDB<br/>
+   - **```INNODB_SYS_FOREIGN_COLS```** facilita metadades sobre les columnes de claus externes que es definiexen en les taules InnoDB<br/>
+   - **```INNODB_SYS_TABLES```** facilita metadades sobre les taules InnoDB<br/>
 
+**Exemples d'us:**<br />
+No he realitzat exemples de totes les maneres d'accedir a les metadades utilitzant les taules del ```INFORMATION_SCHEMA``` perquè les consultes són ben bé iguals i només canvia el nom de la taula del ```INFORMATION_SCHEMA```.<br />
+
+Executarem la següent comanda per obtenir les metadades de la taula **film_text** de la BD de sakila i aquesta ens donarà informació a nivell de bits sobre el format de la taula, les caraterístiques d'emmagatzematge, el ID, etc...
 <p align="center">
- <img src="">
+ <img src="https://user-images.githubusercontent.com/61474788/161720650-59e20e65-8745-435f-8169-1d49530ccfef.png">
 </p>
 <br/>
 
+Seguidament, amb la següent consulta, obtindrem les metadades de les columnes de la mateixa taula anterior a través del seu ID i aquesta ens proporcionara informació concreta de cada columna, com la posició ordinal de cada columna, el seu tipus, el codi del conjunt de caràcters, etc...
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/61474788/161720769-7f8bc77a-3fde-47a9-9d94-861661c71156.png">
+</p>
+<br/>
+
+En la <a href="https://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema-system-tables.html">documentació oficial de InnoDB INFORMATION_SCHEMA System Tables</a> trobarem exemples de tot tipus
 
 **•	Posa un exemple que produeix un DEADLOCK i mostra-ho al professor.**
 <br /><br />
