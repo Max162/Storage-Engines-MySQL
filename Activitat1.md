@@ -55,7 +55,7 @@ ps-admin --enable-rocksdb -u max -pP@ssw0rd
 
 Comprovarem que s'ha instal·lat correctament el MyRocks al veure que s'ha creat el seu storage engine
 <p align="center">
- <img src="![image](https://user-images.githubusercontent.com/61474788/161705565-13c3cec2-e453-4f7b-b239-22896fd88fa2.png)">
+ <img src="https://user-images.githubusercontent.com/61474788/161705565-13c3cec2-e453-4f7b-b239-22896fd88fa2.png">
 </p>
 <br />
 
@@ -65,21 +65,20 @@ Mira quins són els fitxers físics que ha creat, quan ocupen i quines són les 
 Mostra'n una captura de pantalla i indica què conté cada fitxer.
 Un cop fet això torna a deixar el motor InnoDB per defecte.**
 <br /><br />
-
 A l'hora d'importar la BD Sakila i fer que totes les taules siguin de tipus MyISAM, haurem de canviar en totes les taules el valor **ENGINE** per ```ENGINE=MyISAM```
 
 <p align="center">
  <img src="https://user-images.githubusercontent.com/61474788/161706052-834daf94-3608-4949-a498-53f08baf8b89.png">
 </p>
-<br />
+<br/>
 
 Tots els fitxers que es generen a l'hora d'importar la BD es troben en la ruta ```/var/lib/mysql/salika```. Aquests fitxers pessen tots molts **pocs MB** i tenen les extensions **.frm**, **.TRN**, **.MYD** y **MYI**.
 
-Cada extensió conté diferent informació relacionada amb la BD
-**• .frm** contenen informació relacionada amb el format i l'estructura de la BD
-**• .TRN** són copies de seguretat que s'utilitzen per restaurar la BD i per retrocedir a qualsevol estat anterior de la BD
-**• .MYD** contenen informació de bases de dades i taules
-**• .MDI** emmagatzemen els índexs de taules MyISAM
+Cada extensió conté diferent informació relacionada amb la BD<br/>
+**• .frm** contenen informació relacionada amb el format i l'estructura de la BD<br/>
+**• .TRN** són copies de seguretat que s'utilitzen per restaurar la BD i per retrocedir a qualsevol estat anterior de la BD<br/>
+**• .MYD** contenen informació de bases de dades i taules<br/>
+**• .MDI** emmagatzemen els índexs de taules MyISAM<br/>
 
 <p align="center">
  <img src="https://user-images.githubusercontent.com/61474788/161708942-789457fb-c6cb-4339-93b4-544a236a2827.png">
@@ -101,13 +100,41 @@ Tornaríem a tenir el motor InnoDB per defecte
 **•	A partir de MySQL apareixen els schemas de metadades i informació guardats amb InnoDB.
 Busca informació d'aquests schemas. Indica quin és l'objectiu de cadascun d'ells i posa'n un exemple d'ús.**
 <br /><br />
+L'esquema que ens proporciona una fomra d'accedir a les metadades de les bases de dades és el  ```INFORMATION_SCHEMA```, una BD que ve incorporada amb el MySQL, la qual ens permet extreure i consultar metadades sobre els objectes d'esquema administrats per InnoDB utilitzant les taules del sistema del ```INFORMATION_SCHEMA```.
+
+Per consultar les taules executarem del ```INFORMATION_SCHEMA``` executarem:
+```
+mysql> SHOW TABLES FROM INFORMATION_SCHEMA LIKE 'INNODB_SYS%';
++--------------------------------------------+
+| Tables_in_information_schema (INNODB_SYS%) |
++--------------------------------------------+
+| INNODB_SYS_DATAFILES                       |
+| INNODB_SYS_TABLESTATS                      |
+| INNODB_SYS_FOREIGN                         |
+| INNODB_SYS_COLUMNS                         |
+| INNODB_SYS_INDEXES                         |
+| INNODB_SYS_FIELDS                          |
+| INNODB_SYS_TABLESPACES                     |
+| INNODB_SYS_FOREIGN_COLS                    |
+| INNODB_SYS_TABLES                          |
++--------------------------------------------+
 ```
 
-```
+L'objectiu de cada una d'aquestes taules és:<br/>
+**```INNODB_SYS_DATAFILES```** facilita informació de la ruta de l'arxiu de dades per espais tant de tables generals com d'arxiu per taula de InnoDB<br/>
+**```INNODB_SYS_TABLESTATS```** facilita informació del estat de baix nivell sobre les taules InnoDB que es deriva de les estructures de dades de memòria<br/>
+**```INNODB_SYS_FOREIGN```** facilita metadades sobre les claus externes en definides en les taules de InnoDB<br/>
+**```INNODB_SYS_COLUMNS```** facilita metadades sobre les columnes de la taula InnoDB<br/>
+**```INNODB_SYS_INDEXES```** facilita metadades sobre els índexs de InnoDB<br/>
+**```INNODB_SYS_FIELDS```** facilita metadades sobre les columnes clau dels índexs de InnoDB<br/>
+**```INNODB_SYS_TABLESPACES```** facilita metadades tant sobre l'arxiu per taula com d'espai de taules generals de InnoDB<br/>
+**```INNODB_SYS_FOREIGN_COLS```** facilita metadades sobre les columnes de claus externes que es definiexen en les taules InnoDB<br/>
+**```INNODB_SYS_TABLES```** facilita metadades sobre les taules InnoDB<br/>
+
 <p align="center">
  <img src="">
 </p>
-<br />
+<br/>
 
 
 **•	Posa un exemple que produeix un DEADLOCK i mostra-ho al professor.**
