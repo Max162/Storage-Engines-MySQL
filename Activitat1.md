@@ -147,14 +147,22 @@ Seguidament, amb la següent consulta, obtindrem les metadades de les columnes d
 <br/>
 
 En la <a href="https://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema-system-tables.html">documentació oficial de InnoDB INFORMATION_SCHEMA System Tables</a> trobarem exemples de tot tipus
+<br />
 
 **•	Posa un exemple que produeix un DEADLOCK i mostra-ho al professor.**
 <br /><br />
-```
+Seguint la documentació oficial del InnoDB DEADLOCK, trobem el següent exemple que explica clarament el seu funcionament.
 
-```
+En primer lloc, el client A, crearà una taula amb una taula i seguidament iniciarà una transacció d'un SELECT.
 <p align="center">
- <img src="">
+ <img src="https://user-images.githubusercontent.com/61474788/161723476-2ca58998-253f-43f0-94b4-80dce15e0353.png">
 </p>
 <br />
 
+A continuació, el client B, obre una transacció i intenta eliminar la fila de la taula on el client A també esta realitzant una transacció
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/61474788/161725587-931cb701-14e7-4ae3-8de2-656e2fdcf39a.png">
+</p>
+<br />
+
+Com observem, es produeix un error perquè que el client B vol realitzar una transacció sobre unes dades que ja estàn sota una transacció del client A. Aixó es fa perquè no hi hagi inconsistencia en les dades, ja que si dos clients estuguessin consultant i modificant dades al mateix temps, podríen estar canviant modificar dades que en aquell mateix moment necessita un altre client. D'aquesta forma amb el DEADLOCK, si un client obre una transacció, cap altre client podrà ralitzar transaccions sobre una taula que ja tingui una transacció activa.
