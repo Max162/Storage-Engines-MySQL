@@ -75,10 +75,10 @@ A l'hora d'importar la BD Sakila i fer que totes les taules siguin de tipus MyIS
 Tots els fitxers que es generen a l'hora d'importar la BD es troben en la ruta ```/var/lib/mysql/salika```. Aquests fitxers pessen tots molts **pocs MB** i tenen les extensions **.frm**, **.TRN**, **.MYD** y **MYI**.
 
 Cada extensió conté diferent informació relacionada amb la BD<br/>
-**• .frm** contenen informació relacionada amb el format i l'estructura de la BD<br/>
-**• .TRN** són copies de seguretat que s'utilitzen per restaurar la BD i per retrocedir a qualsevol estat anterior de la BD<br/>
-**• .MYD** contenen informació de bases de dades i taules<br/>
-**• .MDI** emmagatzemen els índexs de taules MyISAM<br/>
+   - **.frm** contenen informació relacionada amb el format i l'estructura de la BD<br/>
+   - **.TRN** són copies de seguretat que s'utilitzen per restaurar la BD i per retrocedir a qualsevol estat anterior de la BD<br/>
+   - **.MYD** contenen informació de bases de dades i taules<br/>
+   - **.MDI** emmagatzemen els índexs de taules MyISAM<br/>
 
 <p align="center">
  <img src="https://user-images.githubusercontent.com/61474788/161708942-789457fb-c6cb-4339-93b4-544a236a2827.png">
@@ -147,7 +147,7 @@ Seguidament, amb la següent consulta, obtindrem les metadades de les columnes d
 <br/>
 
 En la <a href="https://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema-system-tables.html">documentació oficial de InnoDB INFORMATION_SCHEMA System Tables</a> trobarem exemples de tot tipus
-<br />
+<br /><br/>
 
 **•	Posa un exemple que produeix un DEADLOCK i mostra-ho al professor.**
 <br /><br />
