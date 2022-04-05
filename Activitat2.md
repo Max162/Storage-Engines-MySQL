@@ -57,6 +57,57 @@ Com observem, en la imatge de la esquerra trobem la carpeta de **sakila** import
    - **/discs-mysql/disk1/primer fitxer de dades → simularà un disc dur**
    - **/discs-mysql/disk2/segon fitxer de dades → simularà un segon disc dur.**
 
+  <br/>
+  
+   En primer lloc, per poder canviar la configuració haurem d'aturar el sereii mysqld amb la comanda ```systemctl stop mysqld```
+   
+
+   Un cop aturat el servei, crearem el directori **/discs-mysql/** amb la comanda ```sudo mkdir /discs-mysql```.
+   
+   Quan tinguem creada la carpeta, li assignarem el permisos corresponents com a propietari mysql de grup i usuari amb les comandes: <br/>
+   ```
+   sudo chown -R mysql:mysql /discs-mysql
+   sudo chmod 750 /discs-mysql/
+   ```
+   
+   Copiarem tots els arxius de **/var/lib/mysql** en el directori **/discs-mysql**
+   ```sudo cp -R -p /var/lib/mysql/* /discs-mysql```
+   
+   
+   Modificarem l'arxiu ```my.cnf``` indicant la ruta del directori **/discs-mysql** en els paràmetres **datadir** i **socket**
+   <p align="center">
+    <img src="https://user-images.githubusercontent.com/61474788/161793203-76a56561-e95d-498c-ade0-9a773c146213.png">
+   </p>
+   <br/>
+   
+   Abans de tornar a iniciar el servei mysqld, executarem les següents comandes per aplicar la seguretat necessaria al nou directori **/discs-mysql**
+   ```
+   semanage fcontext -a -t mysqld_db_t "/discs-mysql(/.*)?"
+   restorecon -R /discs-mysql
+   ```
+   
+   Per acabar, reiniciarem el servei mysqld amb la comanda ```systemctl start mysqld``` i comprovarem que el datadir ha canviat a **/discs-mysql**
+   <p align="center">
+    <img src="https://user-images.githubusercontent.com/61474788/161792955-b08a5ae4-6f82-455f-ab0c-ad765221dc4a.png">
+   </p>
+   <br/>
+   
+   <br/>
+   Seguidament tornarem a apagar el servei mysql amb la comanda ```systemctl stop mysql``` i crearem l'estructura dels direcotris dels discosamb les següents comandes<br/>
+   
+   ```
+   -- Creació dels directoris
+   sudo mkdir /discs-mysql/disk1
+   sudo mkdir /discs-mysql/disk2
+   
+   -- Assignació dels permisos corresponents
+   sudo chown -R mysql:mysql /discs-mysql/disk1
+   sudo chown -R mysql:mysql /discs-mysql/disk2
+   sudo chmod 751 /discs-mysql/disk1
+   sudo chmod 751 /discs-mysql/disk2
+   
+   ```
+
 <p align="center">
  <img src="">
 </p>
