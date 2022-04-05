@@ -1,7 +1,5 @@
-#
 
-**•	Indica quins són els motors d’emmagatzematge que pots utilitzar (quins estan actius)? Mostra al comanda utilitzada i el resultat d’aquesta.**
-<br /><br />
+### **•	Indica quins són els motors d’emmagatzematge que pots utilitzar (quins estan actius)? Mostra al comanda utilitzada i el resultat d’aquesta.**
 Per saber quins motors d'emmagatzematge estan actius utilitzarem la comanda:
 ```
 SHOW STORAGE ENGINES;
@@ -12,8 +10,7 @@ SHOW STORAGE ENGINES;
 <br />
 
 
-**•	Com puc saber quin és el motor d’emmagatzematge per defecte. Mostra com canviar aquest paràmetre de tal manera que les noves taules que creem a la BD per defecte utilitzin el motor MyISAM?**
-<br /><br/>
+### **•	Com puc saber quin és el motor d’emmagatzematge per defecte. Mostra com canviar aquest paràmetre de tal manera que les noves taules que creem a la BD per defecte utilitzin el motor MyISAM?**
 Per saber quin és el motor d'emmagatzematge per defecte ens haurem de fixar en el valor **Support** de la consulta anterior.
 
 <p align="center">
@@ -40,9 +37,8 @@ Comprovarem que el motor per defecte és MyISAM amb la comanda **SHOW ENGINE**
 </p>
 <br />
 
-**•	Explica els passos per instal·lar i activar l'ENGINE MyRocks. MyRocks és un motor d'emmagatzematge per MySQL basat en RocksDB (SGBD incrustat de tipus clau-valor).
-Aquest tipus d’emmagatzematge està optimitzat per ser molt eficient en les escriptures amb lectures acceptables.**
-<br /><br />
+### **•	Explica els passos per instal·lar i activar l'ENGINE MyRocks. MyRocks és un motor d'emmagatzematge per MySQL basat en RocksDB (SGBD incrustat de tipus clau-valor). Aquest tipus d’emmagatzematge està optimitzat per ser molt eficient en les escriptures amb lectures acceptables.**
+
 En primer lloc instal·larem el paquet del MyRocks
 ```
 sudo yum install Percona-Server-rocksdb-57
@@ -60,11 +56,8 @@ Comprovarem que s'ha instal·lat correctament el MyRocks al veure que s'ha creat
 <br />
 
 
-**•	Importa la BD Sakila com a taules MyISAM. Fes els canvis necessaris per importar la BD Sakila perquè totes les taules siguin de tipus MyISAM. 
-Mira quins són els fitxers físics que ha creat, quan ocupen i quines són les seves extensions.
-Mostra'n una captura de pantalla i indica què conté cada fitxer.
-Un cop fet això torna a deixar el motor InnoDB per defecte.**
-<br /><br />
+### •	Importa la BD Sakila com a taules MyISAM. Fes els canvis necessaris per importar la BD Sakila perquè totes les taules siguin de tipus MyISAM. Mira quins són els fitxers físics que ha creat, quan ocupen i quines són les seves extensions. Mostra'n una captura de pantalla i indica què conté cada fitxer. Un cop fet això torna a deixar el motor InnoDB per defecte.
+
 A l'hora d'importar la BD Sakila i fer que totes les taules siguin de tipus MyISAM, haurem de canviar en totes les taules el valor **ENGINE** per ```ENGINE=MyISAM```
 
 <p align="center">
@@ -97,9 +90,7 @@ Tornaríem a tenir el motor InnoDB per defecte
 </p>
 <br />
 
-**•	A partir de MySQL apareixen els schemas de metadades i informació guardats amb InnoDB.
-Busca informació d'aquests schemas. Indica quin és l'objectiu de cadascun d'ells i posa'n un exemple d'ús.**
-<br /><br />
+### **•	A partir de MySQL apareixen els schemas de metadades i informació guardats amb InnoDB. Busca informació d'aquests schemas. Indica quin és l'objectiu de cadascun d'ells i posa'n un exemple d'ús.**
 L'esquema que ens proporciona una fomra d'accedir a les metadades de les bases de dades és el  ```INFORMATION_SCHEMA```, una BD que ve incorporada amb el MySQL, la qual ens permet extreure i consultar metadades sobre els objectes d'esquema administrats per InnoDB utilitzant les taules del sistema del ```INFORMATION_SCHEMA```.
 
 Per consultar les taules executarem del ```INFORMATION_SCHEMA``` executarem:
@@ -149,8 +140,7 @@ Seguidament, amb la següent consulta, obtindrem les metadades de les columnes d
 En la <a href="https://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema-system-tables.html">documentació oficial de InnoDB INFORMATION_SCHEMA System Tables</a> trobarem exemples de tot tipus
 <br /><br/>
 
-**•	Posa un exemple que produeix un DEADLOCK i mostra-ho al professor.**
-<br /><br />
+### **•	Posa un exemple que produeix un DEADLOCK i mostra-ho al professor.**
 Seguint la documentació oficial del InnoDB DEADLOCK, trobem el següent exemple que explica clarament el seu funcionament.
 
 En primer lloc, el client A, crearà una taula amb una taula i seguidament iniciarà una transacció d'un SELECT.
