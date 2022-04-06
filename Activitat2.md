@@ -43,10 +43,7 @@ Com observem, en la imatge de la esquerra trobem la carpeta de **sakila** import
  <img src="https://user-images.githubusercontent.com/61474788/161775496-2a6d23f2-a28e-41be-a028-e1a6ea82b2f6.png">ㅤㅤㅤ
  <img src="https://user-images.githubusercontent.com/61474788/161775547-b7d985e4-065f-49dd-8fc7-5faedfdd6f69.png">
 </p>
-
-
-
-
+<br/>
 
 ### Canvia la configuració del MySQL per:
    - **Canviar la localització dels fitxers del tablespace de sistema per defecte a /discs-mysql/**
@@ -85,7 +82,7 @@ Com observem, en la imatge de la esquerra trobem la carpeta de **sakila** import
    semanage fcontext -a -t mysqld_db_t "/discs-mysql(/.*)?"
    restorecon -R /discs-mysql
    ```
-   
+   <br/>
    Per acabar, reiniciarem el servei mysqld amb la comanda ```systemctl start mysqld``` i comprovarem que el datadir ha canviat a **/discs-mysql**
    <p align="center">
     <img src="https://user-images.githubusercontent.com/61474788/161792955-b08a5ae4-6f82-455f-ab0c-ad765221dc4a.png">
@@ -107,9 +104,29 @@ Com observem, en la imatge de la esquerra trobem la carpeta de **sakila** import
    sudo chmod 751 /discs-mysql/disk2
    
    ```
+   <br/>
+   
+   Per fer que els nostres tablespaces tinguin una mida inicial de 10MB i que vagin creixent de 5MB en 5MB quan superin aquest límit, primerament haurem de eliminar els arxius **ibdata1**, **ib_logfile0** i **ib_logfile1** de la carpeta ```/discs-mysql``` ja que el seu espai supera els 10MB i no estan configurats per anar creixent de 5MB en 5MB. I nosaltres el que volem es que el contingut d'aquests arxius es guardi en els directoris previement creats
+   
+   ```
+   sudo rm ib_logfile0
+   sudo rm ib_logfile1
+   sudo rm ibdata1
+   ```
+   <br/>
+ 
+   Un cop fets els pasos anteriors, en el arxiu ```my.cnf``` afegirem les següents línies on indicarem els nous fitxers on es guardaran les dades del InnoDB amb una mida predeterminada de 10M i amb l'opció **autoextend** en 5M per fer que vagin creixent de 5M en 5M.
+   <p align="center">
+    <img src="https://user-images.githubusercontent.com/61474788/161945188-6f8cb1eb-3a02-4d99-bfd2-f2a4dca054a4.png">
+   </p>
+   <br/>
 
-<p align="center">
- <img src="">
-</p>
-<br/>
+   Per finalitzar, comprovarem que s'hagin creat els arxius ibdata en els directoris i que aquests tenen 10M predeterminats
+   <p align="center">
+    <img src="https://user-images.githubusercontent.com/61474788/161945878-dca86d8a-c375-4fdb-8b73-baa7a1d25847.png">
+    <img src="https://user-images.githubusercontent.com/61474788/161945622-e1e7ca1b-2879-462a-858a-7a4459f80294.png">
+   </p>
+   <br/>
+
+
 
