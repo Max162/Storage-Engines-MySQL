@@ -36,8 +36,12 @@ SELECT * FROM information_schema.rocksdb_cf_options WHERE option_type LIKE '%com
 
 Per canviar la compressió per defecte haurem d'afegir la següent línia en el arxiu ```/etc/my.cnf```
 <p align="center">
- <img src="">
+ <img src="https://user-images.githubusercontent.com/61474788/162048210-610d8947-d86a-491d-9651-caca5ffedf6c.png">
 </p>
 <br/>
 
 Comprovarem que el tipus de compressió per defecte ha canviat a **ZSTD**
+<p align="center">
+ <img src="">
+</p>
+<br/>
