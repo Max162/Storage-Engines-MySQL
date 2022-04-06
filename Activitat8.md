@@ -25,10 +25,10 @@ Els fitxers es guardaran en la ruta ```/var/lib/mysql/db_rocks``` i estaran en f
 ## Quina és la compressió per defecte que utilitza per les taules? Com ho faries per canviar-lo. Per exemple utilitza Zlib o ZSTD o sense compressió
 
 
-```
+Per saber la compressió que que utilitzen els taules per defecte executarem la comanda:
 
-```
+```SELECT * FROM information_schema.rocksdb_cf_options WHERE option_type LIKE '%compression%' AND cf_name='default'```
 <p align="center">
- <img src="">
+ <img src="https://user-images.githubusercontent.com/61474788/162017197-bd0a2221-0dca-4166-8fa4-fb20d7eee841.png">
 </p>
 <br/>
