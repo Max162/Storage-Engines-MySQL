@@ -34,14 +34,15 @@ SELECT * FROM information_schema.rocksdb_cf_options WHERE option_type LIKE '%com
 </p>
 <br/>
 
-Per canviar la compressió per defecte haurem d'afegir la següent línia en el arxiu ```/etc/my.cnf```
+Per canviar la compressió per defecte haurem d'afegir la següent línia en el arxiu ```/etc/my.cnf``` i reiniciarem el mysql amb la comanda ```systemctl restart mysqld```.
 <p align="center">
  <img src="https://user-images.githubusercontent.com/61474788/162048210-610d8947-d86a-491d-9651-caca5ffedf6c.png">
 </p>
 <br/>
 
-Comprovarem que el tipus de compressió per defecte ha canviat a **ZSTD**
+Comprovarem que el tipus de compressió per defecte ha canviat a **ZSTD** amb les següents comandes:
 <p align="center">
- <img src="">
+ <img src="https://user-images.githubusercontent.com/61474788/162069915-54beb60f-a91c-4778-881e-8af1952978aa.png">
+ <img src="https://user-images.githubusercontent.com/61474788/162069872-bd446772-b69a-4a5e-9946-7cacfddf711a.png">
 </p>
 <br/>
