@@ -41,6 +41,10 @@ Per canviar la compressió per defecte haurem d'afegir la següent línia en el 
 <br/>
 
 Comprovarem que el tipus de compressió per defecte ha canviat a **ZSTD** amb les següents comandes:
+```
+SELECT * FROM information_schema.rocksdb_cf_options WHERE option_type LIKE '%compression%' AND cf_name='default';
+SHOW VARIABLES LIKE 'rocksdb_default_cf%';
+```
 <p align="center">
  <img src="https://user-images.githubusercontent.com/61474788/162069915-54beb60f-a91c-4778-881e-8af1952978aa.png">
  <img src="https://user-images.githubusercontent.com/61474788/162069872-bd446772-b69a-4a5e-9946-7cacfddf711a.png">
