@@ -26,9 +26,18 @@ Els fitxers es guardaran en la ruta ```/var/lib/mysql/db_rocks``` i estaran en f
 
 
 Per saber la compressió que que utilitzen els taules per defecte executarem la comanda:
-
-```SELECT * FROM information_schema.rocksdb_cf_options WHERE option_type LIKE '%compression%' AND cf_name='default'```
+```
+SELECT * FROM information_schema.rocksdb_cf_options WHERE option_type LIKE '%compression%' AND cf_name='default'
+```
 <p align="center">
  <img src="https://user-images.githubusercontent.com/61474788/162017197-bd0a2221-0dca-4166-8fa4-fb20d7eee841.png">
 </p>
 <br/>
+
+Per canviar la compressió per defecte haurem d'afegir la següent línia en el arxiu ```/etc/my.cnf```
+<p align="center">
+ <img src="">
+</p>
+<br/>
+
+Comprovarem que el tipus de compressió per defecte ha canviat a **ZSTD**
